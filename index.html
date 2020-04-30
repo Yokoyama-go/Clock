@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Clock⏰</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css"
+      rel="stylesheet"/>
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/snackbar.css">
+    <!-- import the webpage's javascript file -->
+    <script type="text/javascript" src="/script.js" defer></script>
+    <link rel="manifest" href="/manifest.json">
+     <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').then(registration => {
+      console.log('ServiceWorker registration successful.');
+    }).catch(err => {
+      console.log('ServiceWorker registration failed.');
+    });
+  }
+</script>
+  </head>
+  <body>
+    <div id="clock_frame">
+      <p>
+        <span id="clock_time"></span><span id="am_or_pm"></span><br />
+        <span id="clock_date"></span>
+      </p>
+    </div>
+
+    <div class="dropdown">
+  <!--    <img
+        id="humberger"
+        src="https://cdn.glitch.com/a96b3702-549d-4238-be9a-bc9ef2b6d5e4%2Fmore_vert-white-18dp.svg?v=1587112618883"
+      /> -->
+      <div class="dropdown-content">
+        <!--<a id="fullscreen_buttom" href="#" onclick="enterFullscreen()"
+           >Fullscreen (F)   <img
+            src="https://cdn.glitch.com/a96b3702-549d-4238-be9a-bc9ef2b6d5e4%2Ffullscreen-white-18dp.svg?v=1587173477145"
+        /></a>  -->
+        <a href="#" onclick="changeTimeFormat()">Change time format</a>
+        <a href="#"
+           >Settings</a>
+          <img
+            src="https://cdn.glitch.com/a96b3702-549d-4238-be9a-bc9ef2b6d5e4%2Fsettings-white-18dp.svg?v=1587173484318"
+        /><!--</a>
+        <a href="#"
+          >Feedback
+          <img
+            src="https://cdn.glitch.com/a96b3702-549d-4238-be9a-bc9ef2b6d5e4%2Fmessage-white-18dp.svg?v=1587183532828"
+        /></a>
+        <a href="#" id="pip_request" onclick="enter_pip()">Picure in Picture</a> -->
+        <!-- When Feedback is clicked, show this link <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwG5Fuqi4H5LQAUjPNDNy-NYgvCjJZZQ3PSX1o4NwPhBwCIQ/viewform?embedded=true" width="640" height="660" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+      </div>
+    </div>
+
+
+    <video id="clock_frame_pip" muted autoplay></video>
+ </body>
+</html>
