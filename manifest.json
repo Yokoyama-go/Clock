@@ -1,0 +1,120 @@
+/* CSS files add styling rules to your content */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  background-color:#000000;
+  font-family: 'Roboto', sans-serif;
+  color:#ffffff;
+  width:100vw;
+  margin:0px;
+
+}
+
+#clock_frame{
+  margin: auto;
+  width:98vw;
+  text-align:center;
+  position:absolute;
+  top:20vh;
+}
+
+span#clock_time{
+  font-size:  22vw ;
+  font-weight: bold;
+ 
+}
+
+span#am_or_pm{
+  font-size: 8vw;
+  font-weight:bold;
+}
+
+span#clock_date{
+  font-size: 4vw;
+  
+}
+
+
+/* Dropdown Button */
+#humberger{
+  padding: 16px;
+  border: none;
+  position:absolute;
+  top:2px;
+  right:2px;
+  width:25px;
+  height:25px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position:absolute;
+  top:20px;
+  right:20px;
+  background-color: #212121;
+  min-width:160px;
+  z-index: 1;
+  border-radius:4px;
+
+}
+
+.dropdown-content a:hover{
+  background-color:#4f5b62;
+  border-radius:4px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color:#ffffff;
+
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: content-appears 0.1s ease; 
+  
+}
+
+@keyframes content-appears {
+    0% {
+        opacity:  0;             
+        right: 2px;              
+        top:2px;
+    }
+    100% {
+        opacity:  1;                
+        right 2px;              
+  }
+}
+
+.dropdown-content > img{
+  position:relative;
+  right:0px;
+}
+
+.left_p{
+  text-align: left;
+}
+
+.right_p{
+  text-align:right;
+}
+
+
+img{
+  vertical-align: sub;
+}
+
+#clock_frame_pip{
+  display:none;
+  padding:0px;
+  position:relative;
+  buttom;0px;
+}
