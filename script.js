@@ -42,7 +42,7 @@ function clock() {
     if (s < 10) s = "0" + s;
   
    //The developer prefers 12 time format rather than 24 
-  if (timeFormat==="24"){
+ /* if (timeFormat==="24"){
   var h=hRaw;
       console.log("timeFormat is  "+  timeFormat)  
   
@@ -57,14 +57,23 @@ function clock() {
       }
     document.getElementById("am_or_pm").innerHTML = amOrPm;    
       //document.getElementById("am_or_pm").innerHTML = false;
-    }
+    }  */
+  
+    
+      if ( hRaw < 12){
+       var amOrPm = "am" 
+       h = hRaw
+    }else{
+       var h = hRaw -12
+       var amOrPm = "pm"
+      }
   
 
     //　HTML: <span id="clock_date">date</span>
     document.getElementById("clock_date").innerHTML =  y + "/" + mo + "/" + d  +" "+ w ;
     //　HTML: <span id="clock_time">time</span>
     document.getElementById("clock_time").innerHTML = h + ":" + mi + ":" + s  ;
-    
+    document.getElementById("am_or_pm").innerHTML = amOrPm;   
 }
 
 // Run per a thousand milliseconds
