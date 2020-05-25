@@ -239,4 +239,3 @@ function anim() {
   ctx.fillText( h + ":" + mi + ":" + s,  source.width /2 ,source.height /2 );
   requestAnimationFrame( anim );
 }
-*/
