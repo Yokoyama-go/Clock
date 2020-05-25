@@ -37,19 +37,23 @@ span#clock_date{
 
 
 /* Dropdown Button */
+
 #humberger{
   padding: 16px;
   border: none;
   position:absolute;
-  top:2px;
-  right:2px;
+  top:4px;
+  right:4px;
   width:25px;
   height:25px;
 }
 
-/* Dropdown Content (Hidden by Default) */
+.dropdown {
+  display: inline-block;
+}
+
+
 .dropdown-content {
-  display: none;
   position:absolute;
   top:20px;
   right:20px;
@@ -57,16 +61,11 @@ span#clock_date{
   min-width:160px;
   z-index: 1;
   border-radius:4px;
-
-}
-
-.dropdown-content a:hover{
-  background-color:#4f5b62;
-  border-radius:4px;
+  dispaly:none;
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content a{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -74,13 +73,24 @@ span#clock_date{
 
 }
 
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropdown-content p{
+  text-decoration: none;
   display: block;
-  animation: content-appears 0.1s ease; 
+  color:#ffffff;
+  padding: 0px 16px 0px;
+
+}
+
+.dropdown-content a:hover{
+  background-color:#4f5b62;
+  border-radius:4px;
   
 }
+
+.dropdown-content {
+  display: none;
+}
+
 
 @keyframes content-appears {
     0% {
@@ -94,10 +104,27 @@ span#clock_date{
   }
 }
 
+  dropdown-content > img{
+  position:relative;
+  right:0px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+ animation: content-appears 0.1s ease;
+
+
 .dropdown-content > img{
   position:relative;
   right:0px;
 }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+ animation: content-appears 0.1s ease; 
+}
+
+
 
 .left_p{
   text-align: left;
