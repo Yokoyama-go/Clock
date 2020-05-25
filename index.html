@@ -1,49 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- Stable version is on GitHub.-->
+  
   <head>
     <title>Clock⏰</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!--  <link
-      href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css"
-      rel="stylesheet"/>
-    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
--->
+    
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="./style.css" />
-   <link rel="stylesheet" href="./snackbar.css">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/snackbar.css">
     <!-- import the webpage's javascript file -->
-    <script type="text/javascript" src="./script.js" defer></script>
-    <link rel="manifest" href="/manifest.json">
-     <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').then(registration => {
-      console.log('ServiceWorker registration successful.');
-    }).catch(err => {
-      console.log('ServiceWorker registration failed.');
-    });
-  }
+    <script type="text/javascript" src="/script.js" defer></script>
+  
+     
+    <!-- Load manifest -->
+<link rel="manifest" href="/manifest.json">
+<!-- Resiter serviceWorker -->
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then((reg) => {
+        console.log('Service worker registered.', reg);
+      });
+}
+  
+  self.addEventListener('fetch', function(e) {
+  
+})
 </script>
+    
+    <meta name="theme-color" content="#212121">
+    
+    <!-- Hide addressbar -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- App name shown homesreen  -->
+<meta name="apple-mobile-web-app-title" content="Clock⏰">
+<!-- the icon show home sreen -->
+<link rel="apple-touch-icon" href="https://cdn.glitch.com/a96b3702-549d-4238-be9a-bc9ef2b6d5e4%2Fpngfuel.com%20(1).png?v=158875o7137956">
+    
+    
+    
   </head>
-  <body>
+  <body onload="onload();">
     <div id="clock_frame">
       <p>
         <span id="clock_time"></span><span id="am_or_pm"></span><br />
         <span id="clock_date"></span>
       </p>
     </div>
-    
-    
-     <div class="dropdown">
+     
+      <div class="dropdown">
   <img id="humberger" src="https://cdn.glitch.com/a96b3702-549d-4238-be9a-bc9ef2b6d5e4%2Fmore_vert-white-18dp.svg?v=1587112618883">
         <div class="dropdown-content">
           <p>   Timezone: GMT<span id="timezone"></span></p>
     <a href="#" onclick="fullscreen()">Fullscreen</a>
-
+    <!--<a href="#">Settings</a>
+    <a href="#">Feedback</a>
+    <a href="#">Picture in Picture</a>-->
+    <!--<a href="#"></a>-->
   </div>
-    
+</div>
+      
+      
 
-  <!--  <video id="clock_frame_pip" muted autoplay></video>-->
+    <video id="clock_frame_pip" muted autoplay></video>
  </body>
 </html>
