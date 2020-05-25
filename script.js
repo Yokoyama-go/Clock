@@ -123,13 +123,6 @@ var c=function(){var a={},b=!1,d=0,e=arguments.length;"[object Boolean]"===Objec
 
 
 
-
-/*
-
-
-
-var elem = document.body;
-
 // View in fullscreen 
 function enterFullscreen() {
    if (document.fullscreenEnabled){
@@ -142,9 +135,6 @@ function enterFullscreen() {
     } else if (document.body.msRequestFullscreen) { // IE/Edge 
       document.body.msRequestFullscreen();
   }
-    document.getElementById("fullscreen_buttom").innerHTML = "Exit fullscreen";
-    document.getElementById("fullscreen_buttom").setAttribute ("onclick", "exitFullscreen()");
-     
      }else{
        Snackbar.show({text: 'Fullscreen is not supported in your environment.', showAction: false, pos: 'bottom-center',duration:4000});
      }
@@ -152,23 +142,31 @@ function enterFullscreen() {
 
 
 // Close fullscreen 
-function exitFullscreen() {
-  console.log('fullscreen closed by exitFullscreen')
-  if (document.exitFullscreen) {
-    document.body.exitFullscreen();
-    console.log('document.body.exitFullscreen runned')
-  } else if (document.body.webkitExitFullscreen) { //  Chrome, Safari and Opera 
-    document.body.webkitExitFullscreen();
-  } else if (document.body.mozCancelFullScreen) { //Firefox 
-    document.body.mozCancelFullScreen();
-  } else if (document.body.msExitFullscreen) { // IE/Edge
-    document.body.msExitFullscreen();
+function getOuttaFullscreen() {
+  console.log('fullscreen should be closed by exitFullscreen')
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen(); 
+      console.log('document.webkitExitFullscreen runned')
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+      document.msExitFullscreen();
+    }
   }
-  document.getElementById("fullscreen_buttom").innerHTML = "Fullscreen";
-  document.getElementById("fullscreen_buttom").setAttribute ("onclick", "exitFullscreen()");
-}
 
 
+var elem = document.body;
+
+function fullscreen(){
+  if (window.innerHeight == screen.height){
+    getOuttaFullscreen();
+    //console.log("document.fullscreenElement=null")
+  }else{
+      enterFullscreen();
+    };
+  };
 
 // for pip
 document.getElementById("clock_frame_pip").style.display = "none";
