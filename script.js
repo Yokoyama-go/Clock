@@ -80,6 +80,24 @@ function clock() {
 setInterval(clock, 1000);
 
 
+
+var offset = new Date().getTimezoneOffset();
+var timezone = -offset/60
+if (timezone>0){
+  var timezone= '+'+timezone
+}else{
+  var timezone=''+timezone  
+}
+var element;
+element = document.getElementById("timezone");
+if (element) {
+    element.innerHTML = timezone;
+}
+
+
+
+
+
 //var define;
 //var Snackbar;
 
