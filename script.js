@@ -138,7 +138,7 @@ function enterFullscreen() {
      }else{
        Snackbar.show({text: 'Fullscreen is not supported in your environment.', showAction: false, pos: 'bottom-center',duration:4000});
      }
-  ga('send','event','fullscreen',fullscreen_entered',{'nonlnteraction':1});
+  
 }
 
 
@@ -155,7 +155,7 @@ function getOuttaFullscreen() {
     } else if (document.msExitFullscreen) { /* IE/Edge */
       document.msExitFullscreen();
     }
-  ga('send','event','fullscreen',fullscreen_closed',{'nonlnteraction':1});
+ 
   }
 
 
